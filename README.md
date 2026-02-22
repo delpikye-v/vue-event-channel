@@ -11,8 +11,8 @@
 Built on top of `eventbus-z`, it provides type-safe pub/sub
 without introducing a full state manager.
 
-> Build scalable UI communication without prop drilling or store
-> overkill.
+> Build scalable UI communication without prop drilling 
+> or store overkill.
 
 ---
 
