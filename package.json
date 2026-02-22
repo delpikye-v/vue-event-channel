@@ -1,0 +1,80 @@
+{
+  "name": "vue-event-channel-z",
+  "version": "0.1.0",
+  "description": "Fully typed Vue 3 event channel built on top of eventbus-z. Type-safe pub/sub for scalable Vue applications.",
+  "author": "Delpi.Kye",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+
+  "main": "./build/index.cjs.js",
+  "module": "./build/index.esm.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.esm.js",
+      "require": "./build/index.cjs.js"
+    }
+  },
+  "files": [
+    "build"
+  ],
+
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "vue-tsc --declaration --emitDeclarationOnly && rollup -c",
+    "cb": "npm run clean && npm run build",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delpikye-v/vue-event-channel.git"
+  },
+  "homepage": "https://github.com/delpikye-v/vue-event-channel#readme",
+  "bugs": {
+    "url": "https://github.com/delpikye-v/vue-event-channel/issues"
+  },
+
+  "keywords": [
+    "vue",
+    "vue3",
+    "typescript",
+    "event bus",
+    "event channel",
+    "pubsub",
+    "publish subscribe",
+    "vue pubsub",
+    "typed events",
+    "type safe",
+    "vue architecture",
+    "micro frontend",
+    "decoupled architecture"
+  ],
+
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "eventbus-z": "^2.3.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rimraf": "^5.0.0",
+    "rollup": "^4.0.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-esbuild": "^6.1.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "typescript": "^5.3.0",
+    "vue-tsc": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
